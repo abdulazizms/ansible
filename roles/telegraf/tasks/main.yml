@@ -16,6 +16,10 @@
   tags:
      - centos
 
+- name: Set hostname
+  shell: hostname
+  register: telegraf_hostname
+
 - name: Backup telegraf default config
   command: mv /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.conf-default
   tags:
