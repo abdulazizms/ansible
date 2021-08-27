@@ -1,0 +1,29 @@
+---
+- name: Add telegraf repository
+  yum_repository:
+    name: influxdb
+    description: InfluxDB Repository - RHEL
+    baseurl: https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable
+    gpgcheck: no
+    tags:
+     - centos
+
+- name: Install telegraf
+  yum:
+    name: telegraf
+    state: present
+
+- name: Copy telegraf config file
+  template:
+    src: "{{ template_dir }}/telegraf.conf.j2"
+    dest: "/etc/telegraf/telegraf.conf"
+
+- name: Restart service telegraf
+  service:
+    name: telegraf
+    state: restarted
+
+- name: Enable service telegraf
+  service:
+    name: telegraf
+    enabled: yes

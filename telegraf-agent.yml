@@ -1,0 +1,3 @@
+- hosts: bootstrap
+  roles:
+  - telegraf
