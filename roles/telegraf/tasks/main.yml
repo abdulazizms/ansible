@@ -3,7 +3,7 @@
   yum_repository:
     name: influxdb
     description: InfluxDB Repository - RHEL
-    baseurl: https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable
+    baseurl: https://repos.influxdata.com/rhel/$releasever/$basearch/stable
     gpgcheck: no
     tags:
      - centos
