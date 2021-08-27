@@ -6,7 +6,7 @@
     baseurl: https://repos.influxdata.com/rhel/$releasever/$basearch/stable
     gpgcheck: no
     enabled: yes
-    tags:
+  tags:
      - centos
 
 - name: Install telegraf
