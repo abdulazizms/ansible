@@ -19,6 +19,17 @@
 - name: Set hostname
   shell: hostname
   register: telegraf_hostname
+  run_once: true
+  tags:
+     - centos
+
+- set_fact:
+    telegraf_hostname: "{{ telegraf_hostname.stdout }}"
+  tags:
+     - centos
+
+- debug: var=telegraf_hostname
+  run_once: true
   tags:
      - centos
 
