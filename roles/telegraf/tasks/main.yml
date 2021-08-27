@@ -14,6 +14,9 @@
     name: telegraf
     state: present
 
+- name: Backup telegraf default config
+  command: mv /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.conf-default
+
 - name: Copy telegraf config file
   template:
     src: "telegraf.conf.j2"
